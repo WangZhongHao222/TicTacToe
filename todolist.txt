@@ -1,0 +1,1 @@
+1. reframe the game to a class that can be play in GUI or no GUI
