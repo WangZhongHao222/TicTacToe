@@ -101,7 +101,14 @@ def ai_move(b, max_depth=4):
 if __name__ == "__main__":
     board = np.zeros((SIZE, SIZE), dtype=int)
     while True:
-        x, y = map(int, input("你下 (x y): ").split())
+        print(board)
+        while True:
+            try:
+                x, y = map(int, input("你下 (x y): ").split())
+            except:
+                continue
+            if in_bounds(x, y) and board[x, y] == EMPTY:
+                break
         board[x, y] = OPP
         if is_win(board, OPP):
             print("你赢了")
